@@ -1,0 +1,87 @@
+{
+  "name": "kitchen-savvy-front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postbuild": "next-sitemap",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
+    "build:tailwind": "tailwind build styles/index.css -o styles/tailwind.css"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@nextui-org/react": "1.0.0-beta.10",
+    "@popperjs/core": "2.9.1",
+    "@react-oauth/google": "^0.11.0",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@tailwindcss/forms": "0.2.1",
+    "@types/node": "18.11.19",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "@vercel/analytics": "^0.1.8",
+    "axios": "^1.2.3",
+    "chart.js": "2.9.4",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "googleapis": "^118.0.0",
+    "moment": "^2.29.4",
+    "next": "12.3.0",
+    "next-images": "^1.8.5",
+    "next-pwa": "^5.6.0",
+    "next-share": "^0.20.0",
+    "next-themes": "^0.2.1",
+    "nextjs-google-analytics": "^2.3.3",
+    "react": "^18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.9.0",
+    "react-intersection-observer": "^9.4.1",
+    "react-lottie": "^1.2.3",
+    "react-redux": "^8.0.5",
+    "react-responsive-carousel": "^3.2.23",
+    "react-scripts": "4.0.3",
+    "react-tabs": "^6.0.1",
+    "react-waypoint": "^10.3.0",
+    "redux": "^4.2.1",
+    "redux-persist": "^6.0.0",
+    "tailwindcss": "2.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.18",
+    "@types/react": "18.0.20",
+    "@types/react-beautiful-dnd": "^13.1.4",
+    "@types/react-dom": "18.0.6",
+    "autoprefixer": "10.2.5",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0",
+    "postcss": "8.2.8",
+    "react-reveal": "^1.2.2",
+    "typescript": "4.8.3"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "optionalDependencies": {
+    "typescript": "4.2.3",
+    "next-sitemap": "^4.2.2"
+  }
+}

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ainexim.com
+
+# Sitemaps
+Sitemap: https://ainexim.com
