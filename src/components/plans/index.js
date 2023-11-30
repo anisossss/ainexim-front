@@ -1,6 +1,6 @@
 import { Button, Card, Divider, Grid, Link, Text } from "@nextui-org/react";
 import React, { useState } from "react";
-import { Checkbox, Switch } from "@nextui-org/react";
+import { Switch } from "@nextui-org/react";
 import { Box } from "../styles/box";
 import { Flex } from "../styles/flex";
 import axios from "axios";
@@ -128,7 +128,20 @@ export const Plans = () => {
         <Flex>
           <div style={containerStyles}>
             <div style={textStyles}>Monthly</div>
-            <Switch shadow color="primary" onChange={handleSwitch} />
+            <Switch
+              shadow
+              color="primary"
+              onChange={handleSwitch}
+              css={{
+                "& .nextui-switch": {
+                  background: "#86d4cad7",
+                  boxShadow: "none",
+                  "& .nextui-switch:hover": {
+                    background: "white",
+                  },
+                },
+              }}
+            />
             <div style={textStyles}>Annually</div>
           </div>
         </Flex>

@@ -10,10 +10,8 @@ import { Plans } from "../../components/plans/index.js";
 export default function Pricing() {
   const accessToken = useSelector((state) => state.auth.accessToken);
 
-  // Check if the access token exists
   const isAuthenticated = !!accessToken;
 
-  // Conditionally set the layout based on authentication
   const AuthLayout = isAuthenticated ? Logged : Auth;
 
   return (

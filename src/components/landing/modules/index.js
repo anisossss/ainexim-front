@@ -2,27 +2,45 @@ import { Badge, Grid, Text, Card } from "@nextui-org/react";
 import React from "react";
 const Fade = require("react-reveal/Fade");
 import Image from "next/image";
-export const About = () => {
+export const Modules = () => {
   const tabs = [
     {
       img: "/assets/icons/workflow.png",
-      title: "Progress Tracking and Certifications",
-      desc: "Provide features to track users progress, such as completion percentage, module-wise performance achievements.",
+      title: "WEB DEVELOPMENT",
+      desc: "Provide features to track users progress.",
     },
     {
-      img: "/assets/icons/users.png",
-      title: "Accessibility and Convenience",
-      desc: "Provide the flexility of virtual work experience, anytime, anywhere to a wider audience.",
+      img: "/assets/icons/workflow.png",
+      title: "MOBILE DEVELOPMENT",
+      desc: "Provide the flexility of virtual work experice.",
     },
     {
-      img: "/assets/icons/courses.png",
-      title: "Diverse Course Selection",
-      desc: "Offer a vast range of subjects and topics ro choose from, allowing users to explore their interests, aquire new skills.",
+      img: "/assets/icons/workflow.png",
+      title: "PROJECT MANAGEMENT ",
+      desc: "Provide features to track users progres",
     },
     {
-      img: "/assets/icons/computer.png",
-      title: "Interactive wroking experience",
-      desc: "Interactive elements, quizzes, exercices, meeting and more.",
+      img: "/assets/icons/workflow.png",
+      title: "WEB DEVELOPMENT",
+      desc: "Provide features to track users progress,",
+    },
+    {
+      img: "/assets/icons/workflow.png",
+      title: "MOBILE DEVELOPMENT",
+      desc: "Provide the flexility of virtual work e",
+    },
+    {
+      img: "/assets/icons/workflow.png",
+      title: "PROJECT MANAGEMENT ",
+      desc: "Offer a vast range of subjects and ",
+    },    {
+      img: "/assets/icons/workflow.png",
+      title: "PROJECT MANAGEMENT ",
+      desc: "Offer a vast range of subjects and ",
+    },    {
+      img: "/assets/icons/workflow.png",
+      title: "PROJECT MANAGEMENT ",
+      desc: "Offer a vast range of subjects and ",
     },
   ];
   return (
@@ -47,12 +65,10 @@ export const About = () => {
               marginBottom: "2em",
             }}
           >
-            WHY CHOOSE US
+            OUR BEST MODULES
           </Badge>
           <Grid css={{ width: "50%", margin: "auto", marginBottom: "2em" }}>
-            <Text h1>
-              Dive into online working experience with various fields and levels
-            </Text>
+            <Text h1>Discover the most immersive experience</Text>
           </Grid>
         </Fade>
 
@@ -66,7 +82,7 @@ export const About = () => {
           s
         >
           {tabs.map((tab, index) => (
-            <Grid key={index} md={5} align="center">
+            <Grid key={index} md={3} align="center">
               <Card
                 isHoverable
                 css={{
@@ -78,7 +94,7 @@ export const About = () => {
               >
                 <Card.Body>
                   <Grid.Container gap={1}>
-                    <Grid md={4}>
+                    <Grid md={3}>
                       <Image
                         src={tab.img}
                         alt=""

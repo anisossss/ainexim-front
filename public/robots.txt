@@ -6,4 +6,4 @@ Allow: /
 Host: https://ainexim.com
 
 # Sitemaps
-Sitemap: https://ainexim.com
+Sitemap: https://ainexim.com/sitemap.xml

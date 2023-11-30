@@ -1,22 +1,22 @@
 import React from "react";
-import Meta from "../../components/seo/index";
 
 import Auth from "../../layouts/Auth.js";
-import Register from "../../components/auth/Register";
+import Meta from "../../components/seo/index.js";
+import ForgetPassword from "../../components/auth/ForgetPassword.js";
 
-export default function RegisterPage() {
+export default function ForgetPasswordPage() {
   return (
     <>
       <Meta
-        title="Create account - AINEXIM"
+        title="Forget Password - AINEXIM"
         description="AINEXIM, step into the future of virtual work experience."
         ogUrl="https://ainexim.com"
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="AINEXIM, Virtual work"
       ></Meta>
-      <Register />
+      <ForgetPassword />
     </>
   );
 }
 
-RegisterPage.layout = Auth;
+ForgetPasswordPage.layout = Auth;

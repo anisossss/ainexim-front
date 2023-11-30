@@ -47,7 +47,7 @@ export const Hero = () => {
                 h1
                 css={{
                   display: "inline",
-                  textGradient: "45deg, #11EACD -20%, #3d6f7f 50%",
+                  textGradient: "45deg, #86d4ca -20%, #86d4ca 50%",
                 }}
               >
                 with Immersive Interfaces
@@ -80,7 +80,7 @@ export const Hero = () => {
             }}
             wrap={"wrap"}
           >
-            <Link href="/services">
+            <Link href="/waitlist">
               <div className="wrapper-btn">
                 <div className="link_wrapper">
                   <a href="careers" className="a">

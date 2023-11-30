@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Input, Text } from "@nextui-org/react";
 import axios from "axios";
@@ -6,30 +6,49 @@ import toast, { Toaster } from "react-hot-toast";
 import { CONSTANTS } from "../../constants/index";
 import { useRouter } from "next/router";
 
-export default function ResetPassword() {
+export default function ResetPasswordPhone() {
+  const [time, setTime] = useState(60);
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (time > 0) {
+      const timer = setTimeout(() => {
+        setTime(time - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else {
+      setDisabled(false);
+    }
+  }, [time]);
+  const handleRetry = async () => {
+    try {
+      const response = await axios.post(
+        `${CONSTANTS.API_URL_PROD}/auth/resend-otp`,
+        {
+          phoneNumber,
+        }
+      );
+      toast.success(response.data.message);
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
+  };
   const router = useRouter();
-  const userId = router.query.userId;
-  const resetToken = router.query.token;
-  console.log(resetToken);
+  const phoneNumber = router.query.phoneNumber;
+  const [code, setCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleResetPassword = async () => {
     try {
-      if (newPassword !== confirmPassword) {
-        toast.error("Passwords must be identical");
-      }
       const response = await axios.post(
-        `${CONSTANTS.API_URL_PROD}/auth/reset-password-email/${userId}/${resetToken}`,
-        {
-          newPassword,
-        }
+        `${CONSTANTS.API_URL_PROD}/auth/reset-password-phone`,
+        { phoneNumber, code, newPassword }
       );
       if (response.data.success) {
         toast.success(response.data.message);
         setNewPassword("");
-        setConfirmPassword("");
-        router.push("/auth/login");
+        setTimeout(() => {
+          router.push("/auth/login");
+        }, 3000);
       }
     } catch (error) {
       toast.error(error.response.data.message);
@@ -67,19 +86,18 @@ export default function ResetPassword() {
                     className="block uppercase text-blueGray-800 text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    Enter new password
+                    Enter the code
                   </label>
-                  <Input.Password
+                  <Input
                     required
                     size="lg"
                     width="100%"
                     clearable
                     color="white"
                     initialValue=""
-                    // helperText="Insecure password"
-                    type="password"
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
+                    type="text"
+                    value={code}
+                    onChange={(e) => setCode(e.target.value)}
                   />
                 </div>
                 <br></br>
@@ -88,7 +106,7 @@ export default function ResetPassword() {
                     className="block uppercase text-blueGray-800 text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    Confirm the new password
+                    Your new password
                   </label>
                   <Input.Password
                     required
@@ -98,12 +116,12 @@ export default function ResetPassword() {
                     color="white"
                     initialValue=""
                     type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
                   />
                 </div>
 
-                <div className=" mt-6">
+                <div className=" mt-6 flex justify-between">
                   <button
                     className="main-button gradient"
                     type="button"
@@ -111,6 +129,15 @@ export default function ResetPassword() {
                   >
                     Reset
                   </button>
+                  <div>
+                    <button
+                      className="main-button-border gradient "
+                      disabled={disabled}
+                      onClick={handleRetry}
+                    >
+                      {disabled ? `Resend in ${time}s` : "Resend OTP"}
+                    </button>
+                  </div>
                 </div>
               </form>
               <div className="flex flex-wrap mt-6 relative">

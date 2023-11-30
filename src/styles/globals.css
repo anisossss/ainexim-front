@@ -15,7 +15,7 @@
 
 
 ::-webkit-scrollbar-thumb {
-  background: -webkit-linear-gradient(#5bd9ff6c, #11EACD);
+  background: -webkit-linear-gradient(#86d4caaa, #86d4cad7);
 }
 
 html,
@@ -36,14 +36,14 @@ h1 {
 
 h3 {
   margin-top: 1em;
-  background: -webkit-linear-gradient(#11EACD, #508a9b);
+  background: -webkit-linear-gradient(#86d4ca, #86d4caaa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .title {
-  background: -webkit-linear-gradient(#11EACD, #508a9b);
+  background: -webkit-linear-gradient(#86d4ca, #86d4caaa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -74,16 +74,16 @@ span {
 .a {
   display: block;
   width: 250px;
-  height: 50px;
+  height: 55px;
   line-height: 50px;
   font-weight: bold;
   text-decoration: none;
-  background: #11EACD;
+  background: #86d4cad7;
   text-align: center;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 3px solid #11EACD;
+  border: 3px solid #86d4cad7;
   border-radius: 50px;
   transition: all .35s;
 }
@@ -92,7 +92,7 @@ span {
 
 .a:hover {
   width: 200px;
-  border: 3px solid -webkit-linear-gradient(#11EACD, #172A30);
+  border: 3px solid -webkit-linear-gradient(#86d4caaa, #86d4cad7);
   background: transparent;
   color: #333;
 }
@@ -102,13 +102,12 @@ span {
 .main-button {
   color: white;
   width: 130px;
-  height: 45px;
+  height: 49px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 500;
-  border: none;
+  border-radius: 16px;
+  font-weight: 400;
 
 }
 
@@ -119,14 +118,13 @@ span {
 }
 
 .main-button-border {
-  width: 150px;
-  height: 45px;
+  width: 130px;
+  height: 49px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: 500;
-  transition: .4s ease-in-out;
+  border-radius: 16px;
+  font-weight: 400;
 }
 
 .main-button:focus {
@@ -134,17 +132,17 @@ span {
 }
 
 .main-button.gradient {
-  background-color: #11EACD;
+  background-color: #86d4ca;
 }
 
 .main-button.gradient:hover {
-  background-color: #01c1a7;
+  background-color: #589890fa;
 }
 
 .main-button-border.gradient {
   background-color: transparent;
-  color: #11EACD;
-  border: solid 2px #11EACD;
+  color: #86d4cad7;
+  border: solid 2px #86d4cad7;
 }
 
 
@@ -215,10 +213,10 @@ span {
 
 
 .outer-container {
-  padding-bottom: 5em;
+  padding-bottom: 10%;
   width: 80%;
   margin: auto;
-  height: 100vh;
+  height: 120vh;
 }
 
 .inner-container {
@@ -275,8 +273,8 @@ span {
 }
 
 .tab button.active {
-  color: #11EACD;
-  border-bottom: 2px solid #11EACD;
+  color: #86d4cad7;
+  border-bottom: 2px solid #86d4cad7;
 }
 
 .image-container.slide {
@@ -320,7 +318,7 @@ span {
   top: 0;
   right: 0;
   width: 2%;
-  height: 32px;
+  height: 35px;
   background-color: #fff;
   color: #333;
 }
@@ -355,15 +353,17 @@ span {
 
 .active-link {
   font-weight: 600 !important;
-  color: #11EACD !important;
+  color: #86d4ca;
 }
 
 .recipe-card {
   align-items: center;
-  width: 25em;
-  height: 100%;
+  width: 20em;
+  height: 30em;
+  justify-content: center;
+  margin: auto;
+  
 }
-
 
 
 .carousel-item {
@@ -416,7 +416,7 @@ span {
   height: 104px;
   width: 74px;
   border-radius: 49px;
-  background: rgb(139, 195, 74);
+  background: #86d4ca;
   background: linear-gradient(155deg, rgba(135, 208, 51, 0.306) 0%, rgba(92, 185, 42, 0.661) 100%);
   display: flex;
   flex-direction: column;

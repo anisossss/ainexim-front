@@ -4,33 +4,35 @@ import { Input, Text } from "@nextui-org/react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { CONSTANTS } from "../../constants/index";
-import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
-export default function ForgetPassword() {
-  const [email, setEmail] = useState("");
+export default function ForgetPasswordPhone() {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-  const { accessToken } = useSelector((state) => state.auth);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const handlePhoneChange = (value) => {
+    setPhoneNumber(value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
-    setSuccess("");
-    var url = `${CONSTANTS.API_URL_PROD}/auth/forgot-password-email`;
+    var url = `${CONSTANTS.API_URL_PROD}/auth/forgot-password-phone`;
 
     try {
       const response = await axios.post(url, {
-        email,
+        phoneNumber,
       });
 
       if (response.data.success) {
         toast.success(response.data.message);
+        setTimeout(() => {
+          const redirectUrl = `/auth/reset-password-phone?phoneNumber=${phoneNumber}`;
+          router.push(redirectUrl);
+        }, 2000);
       } else {
         toast.error(error.response.data.message);
       }
@@ -54,18 +56,19 @@ export default function ForgetPassword() {
           <div className="relative flex flex-col min-w-0 break-words w-full mb-6 ">
             <div className="rounded-t mb-0 px-4 py-6 ">
               <div className=" mb-3">
-                <Text h4>Recover Your Password</Text>
+                <Text h4>Recover password with phone number</Text>
               </div>
             </div>
             <div className="flex-auto px-4 lg:px-8 py-10 pt-0">
               <div className="text-blueGray-800  mb-3 font-bold">
                 <Text b>
-                  Please enter your email address to reset your password
+                  Please enter your phone number to reset your password
                 </Text>
                 <br></br>
               </div>
               <Text span style={{ fontSize: "14px", color: "#A9A9AE" }}>
-                We&apos;ll send you an email to recover your account.
+                We&apos;ll send you a one-time-password code to recover your
+                account.
               </Text>
               <br></br>
 
@@ -76,16 +79,40 @@ export default function ForgetPassword() {
                     className="block uppercase text-blueGray-800 text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    Email
+                    Phone number
                   </label>
-                  <Input
-                    type="email"
-                    size="lg"
-                    required
-                    width="100%"
-                    clearable
-                    value={email}
-                    onChange={handleEmailChange}
+                  <PhoneInput
+                    disableSearchIcon
+                    enableSearch
+                    country={"za"}
+                    value={phoneNumber}
+                    onChange={handlePhoneChange}
+                    buttonStyle={{
+                      height: "3rem",
+                      border: "1px solid #f1f3f5",
+                      borderRadius: "1rem",
+                      backgroundColor: "#f1f3f5",
+                    }}
+                    inputStyle={{
+                      width: "100%",
+                      height: "3rem",
+                      fontSize: "1rem",
+                      borderRadius: "1rem",
+                      border: "0px solid #fff",
+                      backgroundColor: "#f1f3f5",
+                      fontFamily: "Poppins",
+                    }}
+                    dropdownStyle={{
+                      fontSize: "1rem",
+                      borderRadius: "1rem",
+                      border: "0px solid #fff",
+                      backgroundColor: "#f1f3f5",
+                    }}
+                    searchStyle={{
+                      fontSize: "1rem",
+                      backgroundColor: "#f1f3f5",
+                      width: "90%",
+                    }}
                   />
                 </div>
 
@@ -95,7 +122,7 @@ export default function ForgetPassword() {
                     type="submit"
                     disabled={loading}
                   >
-                    {loading ? "Sending..." : "Email me"}
+                    {loading ? "Sending..." : "Send"}
                   </button>
                 </div>
               </form>

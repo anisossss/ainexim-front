@@ -6,6 +6,9 @@ import Experience from "../components/landing/experience";
 import Certifications from "../components/landing/certifications";
 import UserGuide from "../components/landing/userguide";
 import Newsletter from "../components/landing/newsletter";
+import { About } from "../components/landing/about";
+import { Modules } from "../components/landing/modules";
+import { Enhance } from "../components/landing/enhance";
 
 const Home = () => {
   return (
@@ -20,8 +23,11 @@ const Home = () => {
       <IndexLayout>
         <Hero />
         <Experience />
+        <About />
         <Certifications />
+        <Modules />
         <UserGuide />
+        <Enhance />
         <Newsletter />
       </IndexLayout>
     </>

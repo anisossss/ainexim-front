@@ -33,15 +33,15 @@ export const Nav = () => {
 
     {
       href: "/pricing",
-      title: "Pricing",
+      title: "Packs",
     },
     {
       href: "/waitlist",
       title: "Join Waitlist",
     },
     {
-      href: "/contact-us",
-      title: "Contact",
+      href: "/auth/register",
+      title: "Create Account",
     },
   ];
   return (
@@ -59,7 +59,7 @@ export const Nav = () => {
         <Navbar.Toggle aria-label="toggle navigation" showIn="md" />
         <Link href="/">
           <Image
-            width={250}
+            width={220}
             height={200}
             src="/assets/logo/nav_logo.svg"
             alt="logo"
@@ -80,8 +80,8 @@ export const Nav = () => {
         <Link href="/waitlist">
           <button className="main-button-border gradient">Join Waitlist</button>
         </Link>
-        <Link href="/contact-us">
-          <button className="main-button gradient">Contact</button>
+        <Link href="/auth/register">
+          <button className="main-button gradient">Create Account</button>
         </Link>
       </Navbar.Content>
 

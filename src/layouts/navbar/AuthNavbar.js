@@ -23,10 +23,7 @@ export default function AuthNav() {
       href: "/",
       title: "Home",
     },
-    {
-      href: "/resources",
-      title: "Resources",
-    },
+
     {
       href: "/programs",
       title: "Programs",
@@ -35,6 +32,7 @@ export default function AuthNav() {
       href: "/careers",
       title: "Careers",
     },
+
     {
       href: "/pricing",
       title: "Pricing",
@@ -47,13 +45,13 @@ export default function AuthNav() {
 
   return (
     <Navbar
-      maxWidth={"xl"}
       activeColor="success"
-      variant={"floating"}
       css={{
-        position: "fixed",
-        top: 0,
-        justifyContent: "space-evenly",
+        "& .nextui-navbar-container": {
+          position: "fixed",
+          top: 0,
+          justifyContent: "space-evenly",
+        },
       }}
     >
       <Navbar.Brand>
@@ -78,16 +76,16 @@ export default function AuthNav() {
         }}
       >
         <ActiveLink href="/">Home</ActiveLink>
-        <ActiveLink href="/resources">Resources</ActiveLink>
+        <ActiveLink href="/careers">Careers</ActiveLink>
         <ActiveLink href="/programs">Programs</ActiveLink>
-        <ActiveLink href="/careers">Career Fields</ActiveLink>
+        <ActiveLink href="/pricing">Packs</ActiveLink>
 
         <ActiveLink href="/">
-          My profile
+          My profile &nbsp;
           <Avatar
             css={{ margin: "2px" }}
             size={"lg"}
-            src="/img/.png"
+            src="/assets/icons/avatar.png"
             bordered
             squared
             zoomed
