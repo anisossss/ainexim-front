@@ -1,5 +1,5 @@
 import React from "react";
-import { IndexLayout } from "../layouts/IndexLayout";
+import { IndexLayout } from "../layouts";
 import Meta from "../components/seo/index";
 import { Hero } from "../components/landing/hero";
 import Experience from "../components/landing/experience";
@@ -25,9 +25,9 @@ const Home = () => {
         <Experience />
         <About />
         <Certifications />
-        <Modules />
-        <UserGuide />
-        <Enhance />
+        {/* <Modules /> */}
+        {/* <UserGuide /> */}
+        {/* <Enhance /> */}
         <Newsletter />
       </IndexLayout>
     </>

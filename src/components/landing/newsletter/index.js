@@ -3,40 +3,38 @@ import React, { useState, useEffect } from "react";
 import { Flex } from "../../styles/flex";
 import axios from "axios";
 import { Input } from "@nextui-org/react";
+import CONSTANTS from "../../../constants";
+import toast, { Toaster } from "react-hot-toast";
 const Fade = require("react-reveal/Fade");
 
 export default function Newseltter() {
-  const [flashMessage, setFlashMessage] = useState("");
-  const [showMessage, setShowMessage] = useState(false);
-
   const [email, setEmail] = useState("");
 
-  const handleSubmit = async (e) => {
-    setFlashMessage("A confirmation email has been sent to you !");
-    setShowMessage(true);
-    e.preventDefault();
+  const handleSubmit = async () => {
+    if (!email) {
+      toast.error("Please enter your email");
+      return;
+    }
     try {
       const url = `${CONSTANTS.API_URL_PROD}/user/waitlist`;
 
       const response = await axios.post(url, { email });
+      toast.success("You have been added to the newsletter");
       console.log(response);
     } catch (error) {
+      toast.error("An error occured, please try again");
       console.error(error);
     }
   };
-  useEffect(() => {
-    if (showMessage) {
-      setTimeout(() => {
-        setShowMessage(false);
-      }, 8000);
-    }
-  }, [showMessage]);
 
   return (
     <>
+      <Toaster />
       <Flex
         css={{
+          marginTop: "10em",
           display: "flex",
+          textAlign: "center",
           justifyContent: "center",
           alignItems: "center",
           marginBottom: "10em",
@@ -56,57 +54,35 @@ export default function Newseltter() {
         }}
       >
         <Fade top>
-          <Grid
-            css={{
-              margin: "auto",
-              justifyContent: "center",
-              width: "100%",
-            }}
-          >
-            <Text h4> Join our newsletter to stay updated </Text>
-            <form onSubmit={handleSubmit}>
-              <Flex
-                css={{
-                  pt: "$10",
-                }}
-              >
-                <Grid>
-                  <Input
-                    css={{ height: "4em" }}
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    clearable
-                    contentRightStyling={false}
-                    contentRight={
-                      <Button
-                        type="submit"
-                        className="main-button gradient"
-                        size={"$sm"}
-                        css={{ height: "2em", width: "50px" }}
-                      >
-                        <Text span size={"$sm"} css={{ color: "#fff" }}>
-                          Subscribe
-                        </Text>
-                      </Button>
-                    }
-                  />
-                </Grid>
-              </Flex>
-            </form>
-            {showMessage ? (
-              <Grid
-                css={{
-                  fontWeight: "bold",
-                  textGradient: "45deg, #55A628 -20%, #8BC34A 50%",
-                  padding: "1em",
-                }}
-              >
-                {flashMessage}
-              </Grid>
-            ) : null}
+          <Grid>
+            <Text h3 size={"$4xl"}>
+              Join our newsletter to recieve the latest updates{" "}
+            </Text>
+            <br></br>
+            <br></br>
+            <Grid>
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                size="xl"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                clearable
+                contentRightStyling={false}
+                contentRight={
+                  <Button
+                    onClick={handleSubmit}
+                    className="main-button gradient"
+                    css={{ height: "2em", width: "50px" }}
+                  >
+                    <Text span size={"$sm"} css={{ color: "#fff" }}>
+                      Subscribe
+                    </Text>
+                  </Button>
+                }
+              />
+            </Grid>
           </Grid>
         </Fade>
       </Flex>

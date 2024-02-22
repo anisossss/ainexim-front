@@ -5,17 +5,17 @@ export default function CardsCertifications() {
     {
       image: "/assets/landing/certif1.svg",
       text: "Software Development",
-      desc: "We are a team of software developers, designers, and project managers who are passionate about creating immersive experiences.",
+      desc: "Earn your certification in mobile, web, and desktop development with our industry-leading courses. Dive into cutting-edge technologies and hands-on projects guided by experts.",
     },
     {
       image: "/assets/landing/certif2.svg",
       text: "UX/UI Design",
-      desc: "We are a team of software developers, designers, and project managers who are passionate about creating immersive experiences.",
+      desc: "Become certified in crafting captivating digital experiences. Explore design principles, user psychology, and prototyping through hands-on projects led by industry professionals.",
     },
     {
       image: "/assets/landing/certif3.svg",
       text: "Project Management",
-      desc: "We are a team of software developers, designers, and project managers who are passionate about creating immersive experiences.",
+      desc: "Certify your Agile expertise for project leadership. Learn from industry experts, gain practical experience, and master collaborative teamwork for success in today's fast-paced environment.",
     },
   ];
 
@@ -36,7 +36,8 @@ export default function CardsCertifications() {
         <Grid md={12} sm={12} xs={12}>
           {cards.map(({ image, text, desc }) => (
             <Card
-              isPressable
+              padding
+              isHoverable
               key={text}
               css={{
                 margin: "1em",
@@ -48,7 +49,6 @@ export default function CardsCertifications() {
                   src={image}
                   alt=""
                   width="100%"
-                  css={{ height: "10em", width: "30em" }}
                   objectFit="cover"
                 ></Card.Image>
                 <br></br>

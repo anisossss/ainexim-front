@@ -1,23 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 import Meta from "../../components/seo/index.js";
-import Auth from "../../layouts/Auth.js";
-import Logged from "../../layouts/Logged.js";
 
 import Waitlist from "../../components/waitlist/index.js";
+import { IndexLayout } from "../../layouts/index.js";
 
 export default function WaitlistI() {
-  const accessToken = useSelector((state) => state.auth.accessToken);
-
-  // Check if the access token exists
-  const isAuthenticated = !!accessToken;
-
-  // Conditionally set the layout based on authentication
-  const AuthLayout = isAuthenticated ? Logged : Auth;
-
   return (
-    <AuthLayout>
+    <IndexLayout>
       <Meta
         title="Join the wailist - AINEXIM"
         description="AINEXIM, step into the future of virtual work experience."
@@ -26,6 +16,6 @@ export default function WaitlistI() {
         keywords="AINEXIM, Virtual work"
       ></Meta>
       <Waitlist />
-    </AuthLayout>
+    </IndexLayout>
   );
 }

@@ -20,22 +20,20 @@ export default function certifications() {
           },
         }}
       >
-        <Fade top>
-          <Text h3 size={"$4xl"}>
-            Unleash Your Potential with Our Best Virtual work experience
-          </Text>
-          <br></br>
+        <Text h3 size={"$4xl"}>
+          Unleash Your Potential with Our Best Virtual work experience
+        </Text>
+        <br></br>
 
-          <Text span size={"$md"}>
-            Are you ready to take your skills to the next level? Look no further
-            than our best courses, designed to empower individuals in the fields
-            of software development (mobile, web, and desktop), UX/UI design,
-            and Agile methods. Through a dynamic and immersive online learning
-            experience, you&apos;ll dive deep into industry-relevant topics,
-            gain hands-on experience through practical projects, and receive
-            expert guidance from industry professionals.
-          </Text>
-        </Fade>
+        <Text span size={"$md"}>
+          Are you ready to take your skills to the next level? Look no further
+          than our best courses, designed to empower individuals in the fields
+          of software development (mobile, web, and desktop), UX/UI design, and
+          Agile methods. Through a dynamic and immersive online learning
+          experience, you&apos;ll dive deep into industry-relevant topics, gain
+          hands-on experience through practical projects, and receive expert
+          guidance from industry professionals.
+        </Text>
         <br></br>
         <Cards />
       </Grid>

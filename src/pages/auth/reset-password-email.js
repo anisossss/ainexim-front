@@ -1,6 +1,6 @@
 import React from "react";
 
-import Auth from "../../layouts/Auth.js";
+import { IndexLayout } from "../../layouts";
 import Meta from "../../components/seo/index.js";
 import ResetPassword from "../../components/auth/ResetPassword.js";
 

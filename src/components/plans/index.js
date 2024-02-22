@@ -110,7 +110,7 @@ export const Plans = () => {
   return (
     <>
       <Flex
-        css={{ py: "3em", gap: "1rem", mb: "6em" }}
+        css={{ py: "3em", gap: "1rem", mb: "6em", mt: "6em" }}
         justify={"center"}
         wrap={"wrap"}
         direction={"column"}

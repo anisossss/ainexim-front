@@ -5,17 +5,17 @@ export default function CardsExperiences() {
     {
       image: "/assets/images/web_certif.jpg",
       text: "Software Development",
-      desc: "We are a team of software developers, designers, and project managers who are passionate about creating immersive experiences.",
+      desc: "Master mobile, web, and desktop development with our expert-led courses. Dive into cutting-edge technologies and real-world projects for hands-on experience.",
     },
     {
       image: "/assets/images/design_certif.jpg",
       text: "UX/UI Design",
-      desc: "We are a team of software developers, designers, and project managers who are passionate about creating immersive experiences.",
+      desc: "Unlock the secrets of captivating digital experiences. Learn design principles, user psychology, and prototyping through hands-on projects guided by industry professionals.",
     },
     {
       image: "/assets/images/pm_certif.jpg",
       text: "Project Management",
-      desc: "We are a team of software developers, designers, and project managers who are passionate about creating immersive experiences.",
+      desc: "Lead projects with confidence using Agile methodologies. Learn from industry experts, gain practical experience, and master collaborative teamwork for success in today's fast-paced environment.",
     },
   ];
 
@@ -33,11 +33,10 @@ export default function CardsExperiences() {
           },
         }}
       >
-        <Grid md={12} sm={12} xs={12}>
-          {cards.map(({ image, text, desc }) => (
+        {cards.map(({ image, text, desc }) => (
+          <Grid key={text} md={4}>
             <Card
-              isPressable
-              key={text}
+              isHoverable
               css={{
                 padding: 0,
                 margin: "1em",
@@ -48,7 +47,7 @@ export default function CardsExperiences() {
                   src={image}
                   alt=""
                   width="100%"
-                  css={{ height: "10em", width: "30em" }}
+                  css={{ height: "10em", borderRadius: "10px" }}
                   objectFit="cover"
                 ></Card.Image>
                 <br></br>
@@ -70,8 +69,8 @@ export default function CardsExperiences() {
                 </Grid>
               </Card.Body>
             </Card>
-          ))}
-        </Grid>
+          </Grid>
+        ))}
       </Grid.Container>
     </>
   );

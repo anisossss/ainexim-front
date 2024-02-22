@@ -95,7 +95,7 @@ export default function Waitlist() {
                 <br></br>
                 <div className="relative w-full mb-3">
                   <label className="block uppercase  font-bold mb-2">
-                    Curent Career / Desired Career
+                    Current / Desired Career
                   </label>
                   <Input
                     type="text"

@@ -316,16 +316,6 @@ export default function Register() {
                 </button>
               </Grid>
             </form>
-            <br></br>
-            <Grid className="w-1/3 text-left mb-8">
-              <Link href="/auth/login">
-                <a>
-                  <Text b>
-                    Already have an account? <b>Login</b>
-                  </Text>
-                </a>
-              </Link>
-            </Grid>
           </Grid>
         </Grid>
       </Grid>

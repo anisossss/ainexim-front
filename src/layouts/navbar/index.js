@@ -26,10 +26,10 @@ export const Nav = () => {
       href: "/careers",
       title: "Careers",
     },
-    {
-      href: "/programs",
-      title: "Programs",
-    },
+    // {
+    //   href: "/programs",
+    //   title: "Programs",
+    // },
 
     {
       href: "/pricing",
@@ -51,7 +51,7 @@ export const Nav = () => {
         "& .nextui-navbar-container": {
           position: "fixed",
           top: 0,
-          justifyContent: "space-evenly",
+          justifyContent: "space-between",
         },
       }}
     >
@@ -67,15 +67,10 @@ export const Nav = () => {
           />
         </Link>
       </Navbar.Brand>
-      <Navbar.Content
-        hideIn="md"
-        css={{
-          ml: "8em",
-        }}
-      >
+      <Navbar.Content hideIn="md">
         <ActiveLink href="/">Home</ActiveLink>
         <ActiveLink href="/careers">Careers</ActiveLink>
-        <ActiveLink href="/programs">Programs</ActiveLink>
+        {/* <ActiveLink href="/programs">Programs</ActiveLink> */}
         <ActiveLink href="/pricing">Packs</ActiveLink>
         <Link href="/waitlist">
           <button className="main-button-border gradient">Join Waitlist</button>

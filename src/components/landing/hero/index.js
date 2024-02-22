@@ -27,7 +27,6 @@ export const Hero = () => {
       >
         <Box
           css={{
-            pt: "10em",
             display: "flex",
             flexDirection: "column",
             gap: "$5",
@@ -65,13 +64,6 @@ export const Hero = () => {
             adventure. Our immersive interface takes your professional career to
             new heights by incorporating interactive 3D environments, gamified
             elements, and real-time collaborative work directly in your browser.
-            {/* Whether you&apos; re a software developer specializing in mobile,
-            web, or desktop applications, a UX/UI designer dedicated to creating
-            seamless user experiences, or a passionate advocate of Agile
-            methods, our platform is tailored to your specific field. Complete
-            tasks, earn scores, and track your progress as you build your skills
-            and shape your career in a virtual realm like never before. Join us
-            and discover the future of work today. */}
           </Text>
           <Flex
             css={{
@@ -93,7 +85,7 @@ export const Hero = () => {
           <br></br>
         </Box>
         <Fade top>
-          <Grid css={{ marginTop: "5em" }}>
+          <Grid>
             <Image
               src="/assets/landing/hero.svg"
               alt=""

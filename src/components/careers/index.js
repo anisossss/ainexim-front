@@ -7,93 +7,85 @@ import Image from "next/image";
 export default function Careers() {
   const softwareCareers = [
     {
-      img: "/assets/icons/devweb.svg",
+      img: "/assets/images/careers/software.png",
       name: "Front-End Developer",
     },
     {
-      img: "/assets/icons/devweb.svg",
+      img: "/assets/images/careers/software.png",
       name: "Back-End Developer",
     },
     {
-      img: "/assets/icons/devweb.svg",
+      img: "/assets/images/careers/software.png",
       name: "Full-Stack Developer",
     },
     {
-      img: "/assets/icons/devmobile.svg",
+      img: "/assets/images/careers/software.png",
       name: "Mobile App Developer",
     },
     {
-      img: "/assets/icons/ai.svg",
+      img: "/assets/images/careers/software.png",
       name: "Game Developer",
     },
     {
-      img: "/assets/icons/iot.svg",
+      img: "/assets/images/careers/software.png",
       name: "Embedded Systems Developer",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/software.png",
       name: "DevOps Engineer",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/software.png",
       name: "Data Scientist/Engineer",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/software.png",
       name: "Machine Learning Engineer",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/software.png",
       name: "Security Engineer",
     },
   ];
 
   const designCareers = [
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/design.png",
       name: "UX Designer (User Experience)",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/design.png",
       name: "UI Designer (User Interface)",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/design.png",
       name: "Designer",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/design.png",
       name: "Interaction Designer",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/design.png",
       name: "Visual Designer",
     },
   ];
 
   const projectMangCareers = [
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/team.png",
       name: "Project Manager",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/team.png",
       name: "Scrum Master",
     },
     {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/team.png",
       name: "Product Manager",
     },
     {
-      img: "/assets/icons/",
-      name: "Project Manager",
-    },
-    {
-      img: "/assets/icons/",
-      name: "Program Manager",
-    },
-    {
-      img: "/assets/icons/",
+      img: "/assets/images/careers/team.png",
       name: "Agile Coach",
     },
   ];
@@ -118,16 +110,15 @@ export default function Careers() {
   };
 
   return (
-    <Grid md={12}>
+    <Grid css={{ marginTop: "8em" }}>
       <Grid align="center">
         <Text span size="$2xl" weight="bold">
           Careers available at AINEXIM
         </Text>
       </Grid>
-      <br></br>
       <br></br> <br></br>
       <br></br>
-      <Text span size="$md" weight="bold" css={{ padding: "2em" }}>
+      <Text span size="$xl" weight="bold" css={{ padding: "2%" }}>
         Software Engineer Careers
       </Text>
       <br></br> <br></br>
@@ -138,7 +129,7 @@ export default function Careers() {
             className="recipe-card"
             css={{ paddingTop: "2.5em" }}
           >
-            <Card className="single" isPressable>
+            <Card className="single" isHoverable>
               <Card.Body
                 css={{
                   alignItems: "center",
@@ -172,7 +163,7 @@ export default function Careers() {
           </Grid>
         ))}
       </Carousel>
-      <Text span size="$md" weight="bold" css={{ padding: "2em" }}>
+      <Text span size="$xl" weight="bold" css={{ padding: "2%" }}>
         Designer Careers
       </Text>
       <br></br> <br></br>
@@ -183,7 +174,7 @@ export default function Careers() {
             className="recipe-card"
             css={{ paddingTop: "2.5em" }}
           >
-            <Card className="single" isHoverable isPressable>
+            <Card className="single" isHoverable>
               <Card.Body
                 css={{
                   alignItems: "center",
@@ -194,9 +185,9 @@ export default function Careers() {
                 <Image
                   src={career.img}
                   alt=""
+                  objectFit="contain"
                   height={200}
-                  objectFit="cover"
-                  width="100%"
+                  width={300}
                 />
               </Card.Body>
               <Grid className="p-4">
@@ -217,7 +208,7 @@ export default function Careers() {
           </Grid>
         ))}
       </Carousel>
-      <Text span size="$md" weight="bold" css={{ padding: "2em" }}>
+      <Text span size="$xl" weight="bold" css={{ padding: "2%" }}>
         Project Management Careers
       </Text>
       <br></br> <br></br>
@@ -228,7 +219,7 @@ export default function Careers() {
             className="recipe-card"
             css={{ paddingTop: "2.5em" }}
           >
-            <Card className="single" isHoverable isPressable>
+            <Card className="single" isHoverable>
               <Card.Body
                 css={{
                   alignItems: "center",
@@ -239,9 +230,9 @@ export default function Careers() {
                 <Image
                   src={career.img}
                   alt=""
+                  objectFit="contain"
                   height={200}
-                  objectFit="cover"
-                  width="100%"
+                  width={300}
                 />
               </Card.Body>
               <Grid className="p-4">

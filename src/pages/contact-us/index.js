@@ -2,22 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import Meta from "../../components/seo/index.js";
-import Auth from "../../layouts/Auth.js";
-import Logged from "../../layouts/Logged.js";
+import { IndexLayout } from "../../layouts";
 
 import Contact from "../../components/contact/index.js";
 
 export default function ContactI() {
-  const accessToken = useSelector((state) => state.auth.accessToken);
-
-  // Check if the access token exists
-  const isAuthenticated = !!accessToken;
-
-  // Conditionally set the layout based on authentication
-  const AuthLayout = isAuthenticated ? Logged : Auth;
-
   return (
-    <AuthLayout>
+    <IndexLayout>
       <Meta
         title="Contact Us - AINEXIM"
         description="AINEXIM, step into the future of virtual work experience."
@@ -26,6 +17,6 @@ export default function ContactI() {
         keywords="AINEXIM, Virtual work"
       ></Meta>
       <Contact />
-    </AuthLayout>
+    </IndexLayout>
   );
 }

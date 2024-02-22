@@ -2,15 +2,8 @@ import "../styles/globals.css";
 import { NextUIProvider, Loading } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { SSRProvider } from "@react-aria/ssr";
-
 import React from "react";
-
-import ReactDOM from "react-dom";
 import App from "next/app";
-import Router from "next/router";
-
-import PageChange from "./PageChange";
-
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import ".././styles/tailwind.css";
 
@@ -19,23 +12,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../store/store";
 
 import { RouteGuard } from "../core/authGuard";
-
-Router.events.on("routeChangeStart", (url) => {
-  console.log(`Loading: ${url}`);
-  document.body.classList.add("body-page-transition");
-  ReactDOM.render(
-    <PageChange path={url} />,
-    document.getElementById("page-transition")
-  );
-});
-Router.events.on("routeChangeComplete", () => {
-  ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
-  document.body.classList.remove("body-page-transition");
-});
-Router.events.on("routeChangeError", () => {
-  ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
-  document.body.classList.remove("body-page-transition");
-});
 
 export default class MyApp extends App {
   constructor(props) {

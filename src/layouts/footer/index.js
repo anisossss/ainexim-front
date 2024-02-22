@@ -85,12 +85,13 @@ export const Footer = () => {
         <div className="flex flex-wrap items-center md:justify-between justify-center">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-white font-semibold py-1">
-              Copyright © {new Date().getFullYear()} AINEXIM Inc.{" "}
+              Copyrights © {new Date().getFullYear()} AINEXIM.{" "}
               <a
-                href="https://github.com/anisossss"
+                href="https://aa-production.vercel.app"
                 className="text-white hover:text-white"
+                target="_blank"
               >
-                by Anis
+                by AA Production
               </a>
             </div>
           </div>

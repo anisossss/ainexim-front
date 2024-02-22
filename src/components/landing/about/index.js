@@ -38,23 +38,21 @@ export const About = () => {
           width: "95%",
         }}
       >
-        <Fade left>
-          <Badge
-            css={{
-              padding: "1em",
-              color: "#fff",
-              background: "#86d4caaa",
-              marginBottom: "2em",
-            }}
-          >
-            WHY CHOOSE US
-          </Badge>
-          <Grid css={{ width: "50%", margin: "auto", marginBottom: "2em" }}>
-            <Text h1>
-              Dive into online working experience with various fields and levels
-            </Text>
-          </Grid>
-        </Fade>
+        <Badge
+          css={{
+            padding: "1em",
+            color: "#fff",
+            background: "#86d4caaa",
+            marginBottom: "2em",
+          }}
+        >
+          WHY CHOOSE US
+        </Badge>
+        <Grid css={{ width: "50%", margin: "auto", marginBottom: "2em" }}>
+          <Text h1>
+            Dive into online working experience with various fields and levels
+          </Text>
+        </Grid>
 
         <Grid.Container
           css={{
