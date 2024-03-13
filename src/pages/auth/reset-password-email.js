@@ -14,9 +14,9 @@ export default function ResetPasswordPage() {
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="AINEXIM, Virtual work"
       ></Meta>
-      <ResetPassword />
+      <IndexLayout>
+        <ResetPassword />
+      </IndexLayout>
     </>
   );
 }
-
-ResetPasswordPage.layout = Auth;

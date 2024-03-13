@@ -14,9 +14,9 @@ export default function ForgetPasswordPage() {
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="AINEXIM, Virtual work"
       ></Meta>
-      <ForgetPassword />
+      <IndexLayout>
+        <ForgetPassword />
+      </IndexLayout>
     </>
   );
 }
-
-ForgetPasswordPage.layout = Auth;

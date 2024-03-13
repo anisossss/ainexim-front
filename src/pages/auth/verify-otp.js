@@ -14,9 +14,9 @@ export default function VerifyOTPPage() {
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="AINEXIM, Virtual work"
       ></Meta>
-      <VerifyOTP />
+      <IndexLayout>
+        <VerifyOTP />
+      </IndexLayout>
     </>
   );
 }
-
-VerifyOTPPage.layout = Auth;

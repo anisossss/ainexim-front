@@ -14,9 +14,9 @@ export default function ForgetPasswordPhonePage() {
         thumbnail="https://i.postimg.cc/MKBWj4pd/thumbnail.png"
         keywords="AINEXIM, Virtual work"
       ></Meta>
-      <ForgetPasswordPhone />
+      <IndexLayout>
+        <ForgetPasswordPhone />
+      </IndexLayout>
     </>
   );
 }
-
-ForgetPasswordPhonePage.layout = Auth;
