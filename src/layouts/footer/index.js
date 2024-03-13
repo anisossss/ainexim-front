@@ -90,6 +90,7 @@ export const Footer = () => {
                 href="https://aa-production.vercel.app"
                 className="text-white hover:text-white"
                 target="_blank"
+                rel="noreferrer"
               >
                 by AA Production
               </a>
