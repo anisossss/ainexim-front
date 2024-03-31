@@ -304,17 +304,6 @@ export default function Register() {
                   </Checkbox>
                 </label>
               </Grid>
-              <Grid className="text-center mt-6">
-                <button
-                  className=" px-6 py-3 outline-none focus:outline-none mr-1 mb-1 w-full main-button gradient"
-                  type="main-button "
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  onClick={handleCreateAccount}
-                >
-                  Create Account
-                </button>
-              </Grid>
             </form>
           </Grid>
         </Grid>

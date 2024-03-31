@@ -39,10 +39,6 @@ export const Nav = () => {
       href: "/waitlist",
       title: "Join Waitlist",
     },
-    {
-      href: "/auth/register",
-      title: "Create Account",
-    },
   ];
   return (
     <Navbar
@@ -74,9 +70,6 @@ export const Nav = () => {
         <ActiveLink href="/pricing">Packs</ActiveLink>
         <Link href="/waitlist">
           <button className="main-button-border gradient">Join Waitlist</button>
-        </Link>
-        <Link href="/auth/register">
-          <button className="main-button gradient">Create Account</button>
         </Link>
       </Navbar.Content>
 
